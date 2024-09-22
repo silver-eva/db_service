@@ -28,6 +28,8 @@ create table app.user (
   name varchar(128) not null unique,
   password text not null,
   email varchar(255) not null unique,
+  created timestamp default now(),
+  updated timestamp default now(),
   verified boolean default false,
   role app.roles not null default 'viewer'
 );
